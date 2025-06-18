@@ -22,7 +22,6 @@ COPY src ./src
 COPY public ./public
 COPY .eslintrc.js ./
 COPY tsconfig.json ./
-COPY webpack.config.ts ./
 RUN npm run build
 
 # Nginx proxy to serve backend ('/api') and frontend ('/') from same port

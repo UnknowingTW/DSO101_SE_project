@@ -1,27 +1,22 @@
-
-const databaseConfig = {
+module.exports = {
   client: 'pg',
-  version: '5.7',
+  version: '12', // Use your actual Postgres version, or omit if not needed
   connection: {
     host: process.env.DATABASE_HOST,
     port: Number(process.env.DATABASE_PORT),
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
     database: process.env.DATABASE_NAME,
-  }
-}
-
-const config = {
-  database: {
-    ...databaseConfig,
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
+    ssl: {
+      rejectUnauthorized: false
     }
   },
+  pool: {
+    min: 1,
+    max: 2
+  },
+  migrations: {
+    tableName: 'knex_migrations'
+  },
+  debug: true
 }
-
-module.exports = config

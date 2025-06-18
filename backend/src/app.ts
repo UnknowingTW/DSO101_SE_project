@@ -9,6 +9,9 @@ import { PRODUCTION, JWT_SECRET, REFRESH_JWT_SECRET } from './constants'
 import routes from './routes'
 import { databaseConfig } from './config'
 import HTTP_CODE from './errors/httpCodes'
+import dotenv from 'dotenv'
+dotenv.config()
+
 
 // Environment execution info
 console.log(`Running in ${PRODUCTION ? 'PRODUCTION' : 'DEVELOPMENT'} mode\n`)
@@ -42,11 +45,13 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 
+
 export const API_PREFIX = '/api'
 
 app.use(`${API_PREFIX}/public`, express.static('public'))
 app.use(`${API_PREFIX}/uploads`, express.static('uploads'))
 app.use(API_PREFIX, routes)
+
 
 // 404 Not Found Errors
 app.use(errorHandler((req: Request, res: Response, next: NextFunction) => {

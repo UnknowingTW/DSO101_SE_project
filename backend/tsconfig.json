@@ -66,6 +66,7 @@
     "paths": {
       "*": ["*.d.ts"]
     },
+    
   },
   "exclude": [
       "tests",
