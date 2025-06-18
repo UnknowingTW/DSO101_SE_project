@@ -3,9 +3,9 @@ pipeline {
 
     environment {
         // Replace with your Jenkins credentials ID for GitHub
-        GIT_CREDENTIALS_ID = 'GITHUB_CREDENTIALS'
+        GIT_CREDENTIALS_ID = '1'
         // Replace with your repository URL
-        REPO_URL = 'https://github.com/C-gyeltshen/DSO-FinalAssignment.git'
+        REPO_URL = 'https://github.com/UnknowingTW/DSO101_SE_project.git'
         // Branch to push to
         BRANCH = 'main'
     }
