@@ -25,7 +25,7 @@ module.exports = {
       'ignoredNodes': ['TemplateLiteral', 'SwitchCase']
     }],
     'no-trailing-spaces': ERROR,
-    'no-magic-numbers': WARN,
+    'no-magic-numbers': WARN,0
     //'react/jsx-one-expression-per-line': OFF,
     //'react/jsx-max-props-per-line': [WARN, { 'maximum': 2}], // Eslint autofix breaks the identation
     //'max-len': [WARN, { 'ignoreTrailingComments': true, 'ignoreComments': true }],
