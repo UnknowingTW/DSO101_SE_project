@@ -1,0 +1,32 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [ main ]
+  workflow_run:
+    workflows: ["Docker Build and Push"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Deploy notification
+      run: |
+        echo "🚀 Deployment triggered!"
+        echo "✅ Docker images built and pushed successfully"
+        echo "📝 Ready for manual deployment to Render"
+        
+    - name: Create deployment summary
+      run: |
+        echo "## Deployment Summary 📋" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Frontend image: ${{ secrets.DOCKERHUB_USERNAME }}/dso101-frontend:latest" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Backend image: ${{ secrets.DOCKERHUB_USERNAME }}/dso101-backend:latest" >> $GITHUB_STEP_SUMMARY
+        echo "- 🔗 Docker Hub: https://hub.docker.com/u/${{ secrets.DOCKERHUB_USERNAME }}" >> $GITHUB_STEP_SUMMARY
+        echo "- 📅 Deployed at: $(date)" >> $GITHUB_STEP_SUMMARY
