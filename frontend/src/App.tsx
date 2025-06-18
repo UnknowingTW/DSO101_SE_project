@@ -32,7 +32,7 @@ const BMICalculator = () => {
   const fetchHistory = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/user/bmi');
+      const res = await fetch('https://dso101-backend.onrender.com/api/user/bmi');
       if (!res.ok) throw new Error('Failed to load history');
       const data = await res.json();
       setHistory(data);
@@ -80,7 +80,7 @@ const BMICalculator = () => {
     setBmi(bmiValue);
 
     try {
-      const res = await fetch('/api/create/bmi', {
+      const res = await fetch('https://dso101-backend.onrender.com/api/create/bmi', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
