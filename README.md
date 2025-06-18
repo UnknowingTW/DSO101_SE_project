@@ -4,6 +4,31 @@
 
 This project implements a complete DevSecOps pipeline for a PERN (PostgreSQL, Express, React, Node.js) stack application with BMI calculator functionality. The pipeline includes automated testing, containerization with Docker, continuous integration with Jenkins and GitHub Actions, and deployment to Render.
 
+Project Objectives
+
+
+1.    Develop a BMI Calculator Application:
+    Create a web-based tool that allows users to input their height and weight to calculate their Body Mass Index (BMI).
+
+
+2.   Implement Data Persistence:
+    Store each BMI calculation in a database to enable users to view their historical data and track progress over time.
+
+
+3.    Containerize the Application:
+    Use Docker to package the application and its dependencies, facilitating consistent deployment across different environments.
+
+
+4.    Automate Deployment Processes:
+    Set up Continuous Integration and Continuous Deployment (CI/CD) pipelines using tools such as Jenkins and GitHub Actions to automate building, testing, and deploying the application.
+
+
+5.    Deploy the Application Online:
+    Host the application on a cloud platform to ensure accessibility for users worldwide.
+
+
+
+
 ## BMI Calculator Implementation
 
 The BMI calculator feature includes:
